@@ -1,3 +1,4 @@
+/* 전체 페이지 기본 스타일 */
 * {
     margin: 0;
     padding: 0;
@@ -6,127 +7,66 @@
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
-
-header {
-    background-color: #333;
-    padding: 10px 0;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-nav .logo a {
-    color: #fff;
-    font-size: 24px;
-    text-decoration: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 10;
 }
 
 nav ul {
-    list-style-type: none;
-    display: flex;
+    list-style: none;
+    display: inline-flex;
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: #fff;
     text-decoration: none;
+    color: white;
     font-size: 18px;
+    transition: color 0.3s;
 }
 
-.hero {
-    background: url('restaurant-hero.jpg') no-repeat center center/cover;
-    height: 50vh;
+nav ul li a:hover {
+    color: #ff6347;
+}
+
+/* 각 섹션 스타일 */
+.section {
+    height: 100vh;   /* 각 섹션이 화면을 꽉 채우게 설정 */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
-}
-
-.hero h1 {
-    font-size: 3rem;
-}
-
-.hero .btn {
-    background-color: #f8b400;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.menu {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.menu h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-}
-
-.menu-items {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.menu-item {
-    width: 300px;
-    margin: 10px;
-}
-
-.menu-item img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.menu-item h3 {
-    margin: 10px 0;
-    font-size: 1.5rem;
-}
-
-.menu-item p {
-    font-size: 1rem;
-    color: #666;
-}
-
-.footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
     padding: 20px;
 }
 
-/* 반응형 디자인 */
-@media screen and (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
+#section1 {
+    background-color: #2C3E50;
+}
 
-    .hero h1 {
-        font-size: 2rem;
-    }
+#section2 {
+    background-color: #E74C3C;
+}
 
-    .menu-items {
-        flex-direction: column;
-    }
+#section3 {
+    background-color: #1ABC9C;
+}
 
-    .menu-item {
-        width: 90%;
-        margin-bottom: 20px;
-    }
+/* 스크롤에 따른 부드러운 전환 효과 */
+html {
+    scroll-behavior: smooth;
 }
